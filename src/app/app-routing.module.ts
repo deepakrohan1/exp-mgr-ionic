@@ -11,6 +11,9 @@ const routes: Routes = [
     redirectTo: 'categories',
     pathMatch: 'full'
   },
+  /**
+   * Load Categories and Category Details on passing the request id
+   */
   {
     path: 'categories',
     children: [
@@ -19,7 +22,7 @@ const routes: Routes = [
         loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
       },
       {
-        path: ':id',
+        path: ':categoryId',
         loadChildren: () => import('./category/category-detail/category-detail.module').then( m => m.CategoryDetailPageModule)
       }
     ]

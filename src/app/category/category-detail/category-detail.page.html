@@ -1,9 +1,43 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>category-detail</ion-title>
+  <ion-toolbar color = "primary" >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/categories" ></ion-back-button>
+      </ion-buttons>
+    <ion-title>{{category.category}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click) = "onDeleteCategory()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <h1>{{category.category}}</h1>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{category.categoryDesc}}</p>
+            <p>{{category.amount}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let item of category.expenses">
+            <ion-label>{{item}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

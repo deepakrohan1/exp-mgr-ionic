@@ -3,4 +3,5 @@ export class Category {
     category: string;
     categoryDesc: string;
     amount: number;
+    expenses: string[];
 }

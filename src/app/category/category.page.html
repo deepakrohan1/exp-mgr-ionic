@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let category of categories" (click)="onSelectCategory(category)">
+    <ion-item *ngFor="let category of categories" [routerLink] = "['/categories', category.id]">
       <ion-label>{{ category.category }}</ion-label>
     </ion-item>
     </ion-list> 
