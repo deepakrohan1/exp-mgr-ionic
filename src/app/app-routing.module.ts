@@ -8,8 +8,21 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'categories',
     pathMatch: 'full'
+  },
+  {
+    path: 'categories',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
+      },
+      {
+        path: ':id',
+        loadChildren: () => import('./category/category-detail/category-detail.module').then( m => m.CategoryDetailPageModule)
+      }
+    ]
   },
 ];
 
