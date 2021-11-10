@@ -1,5 +1,7 @@
 {
   "name": "exp-mgr-ionic",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
