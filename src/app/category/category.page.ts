@@ -40,6 +40,13 @@ export class CategoryPage implements OnInit, OnDestroy {
     this.router.navigate(['/', 'categories', categoryId]);
   }
 
+  deleteCategory(categoryId: string, slidingCat: IonItemSliding) {
+    slidingCat.close();
+    console.log('delete category: ' + categoryId);
+    this.categoryService.deleteCategory(parseInt(categoryId, 10));
+    this.categories = this.categoryService.getCategories();
+  }
+
   ngOnDestroy() {
     // this.categories = [];
   };

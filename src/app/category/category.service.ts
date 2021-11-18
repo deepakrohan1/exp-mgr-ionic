@@ -61,6 +61,14 @@ export class CategoryService {
     return this.categories.find(category => category.id === id);
   }
 
+  addCategory(cat: Category) {
+    console.log("🚀 ~ file: category.service.ts ~ line 65 ~ CategoryService ~ addCategory ~ cat", cat);
+    this.categories.push(cat);
+
+    console.log("🚀 ~ file: category.service.ts ~ line 65 ~ CategoryService ~ addCategory ~ cat", this.categories);
+  }
+
+
   deleteCategory(id: number): void {
     this.categories = this.categories.filter(category => category.id !== id);
   }
