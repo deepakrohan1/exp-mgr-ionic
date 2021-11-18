@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,13 +20,19 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
+        loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule),
+        canLoad: [AuthGuard]
       },
       {
         path: ':categoryId',
-        loadChildren: () => import('./category/category-detail/category-detail.module').then( m => m.CategoryDetailPageModule)
+        loadChildren: () => import('./category/category-detail/category-detail.module').then( m => m.CategoryDetailPageModule),
+        canLoad: [AuthGuard]
       }
     ]
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
   },
 ];
 
