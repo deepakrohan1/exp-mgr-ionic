@@ -1,3 +1,31 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="home">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Expense Manager</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Logout</ion-label>
+          <ion-icon name="log-out-sharp" slot="end"></ion-icon>
+        </ion-item>
+        <!-- <ion-item>
+          <ion-label>Expense List</ion-label>
+          <ion-icon name="list" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Add Expense</ion-label>
+          <ion-icon name="add" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Settings</ion-label>
+          <ion-icon name="settings" slot="end"></ion-icon>
+        </ion-item> -->
+      </ion-list>
+      </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>
