@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Category } from './category.model';
+// loadash
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -62,14 +64,18 @@ export class CategoryService {
   }
 
   addCategory(cat: Category) {
-    console.log("🚀 ~ file: category.service.ts ~ line 65 ~ CategoryService ~ addCategory ~ cat", cat);
     this.categories.push(cat);
-
-    console.log("🚀 ~ file: category.service.ts ~ line 65 ~ CategoryService ~ addCategory ~ cat", this.categories);
   }
 
 
   deleteCategory(id: number): void {
     this.categories = this.categories.filter(category => category.id !== id);
   }
+
+  updateCategory( category: Category) {
+    // update category in categories array
+    const index = this.categories.findIndex(cat => cat.id === category.id);
+    this.categories[index] = category;
+  }
+
 }

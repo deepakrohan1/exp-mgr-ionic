@@ -37,7 +37,7 @@ export class CategoryPage implements OnInit, OnDestroy {
   updateCategory(categoryId: string, slidingCat: IonItemSliding) {
     slidingCat.close();
     console.log('update category: ' + categoryId);
-    this.router.navigate(['/', 'categories', categoryId]);
+    this.router.navigate(['/', 'categories', 'edit', categoryId]);
   }
 
   deleteCategory(categoryId: string, slidingCat: IonItemSliding) {

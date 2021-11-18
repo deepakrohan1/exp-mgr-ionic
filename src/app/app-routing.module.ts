@@ -30,6 +30,11 @@ const routes: Routes = [
         canLoad: [AuthGuard]
       },
       {
+        path: 'edit/:id',
+        loadChildren: () => import('./category/category-edit/category-edit.module').then( m => m.CategoryEditPageModule),
+        canLoad: [AuthGuard]
+      },
+      {
         path: ':categoryId',
         loadChildren: () => import('./category/category-detail/category-detail.module').then( m => m.CategoryDetailPageModule),
         canLoad: [AuthGuard]
