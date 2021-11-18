@@ -23,6 +23,12 @@ const routes: Routes = [
         loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule),
         canLoad: [AuthGuard]
       },
+    
+      {
+        path: 'add',
+        loadChildren: () => import('./category/category-add/category-add.module').then( m => m.CategoryAddPageModule),
+        canLoad: [AuthGuard]
+      },
       {
         path: ':categoryId',
         loadChildren: () => import('./category/category-detail/category-detail.module').then( m => m.CategoryDetailPageModule),
@@ -34,6 +40,7 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
   },
+  
 ];
 
 @NgModule({
